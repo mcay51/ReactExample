@@ -1,0 +1,12 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "node index && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
