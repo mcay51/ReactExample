@@ -14,6 +14,7 @@ console.log("Hello Callback Metodu");
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
+import axios from "axios";
 import fetch from "node-fetch"; 
 /* fetch("https://jsonplaceholder.typicode.com/users")
 .then((data) =>data.json())
@@ -62,7 +63,7 @@ getData();
 */
 //getData() diye bir metod ile bu işi yapmak yerine global bir fonksiyon ile bu işi yapmak istersek de aşağıdaki gibi bir 
 // tanımlama yapmalıyız.
-
+/*
 ( async ()=>
 {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -80,5 +81,22 @@ getData();
     console.log("post1 : ",post1);
     console.log("post2 : ",post2);
 })();
+*/
+// Yukarıdaki kodu fetch yerine axios ile yapmak için aşağıdaki kod kullanabiliriz.
+( async ()=>
+{
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    const {data:users}=  await axios("https://jsonplaceholder.typicode.com/users");
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    const {data:post1}= await axios("https://jsonplaceholder.typicode.com/posts/1");
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    const {data:post2}= await axios("https://jsonplaceholder.typicode.com/posts/2");
+    
+    console.log("users : ",users);
+    console.log("post1 : ",post1);
+    console.log("post2 : ",post2);
+})();
+
+
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "1";
 
