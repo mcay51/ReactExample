@@ -57,11 +57,15 @@ User.propTypes={
         PropTypes.string
     ]),
     friends : PropTypes.array,
-    family : PropTypes.array,
+   
     address: PropTypes.shape({
         title:PropTypes.string,
         zip:PropTypes.number,
-    })
+    }),
+    family: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })).isRequired,
 
 };
 
