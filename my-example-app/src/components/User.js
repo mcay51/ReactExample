@@ -31,6 +31,15 @@ function User(props){
             )
           
         }
+          <h1>Address</h1>
+        {
+           
+            <div >
+                {props.address.title} - {props.address.zip}
+            </div>
+         
+          
+        }
     
 
         </>
@@ -48,7 +57,11 @@ User.propTypes={
         PropTypes.string
     ]),
     friends : PropTypes.array,
-    family : PropTypes.array
+    family : PropTypes.array,
+    address: PropTypes.shape({
+        title:PropTypes.string,
+        zip:PropTypes.number,
+    })
 
 };
 
