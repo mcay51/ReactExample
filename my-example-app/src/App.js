@@ -5,13 +5,35 @@ import User from './components/User';
 const name="Mustafa";
 const surname="ÇAY";
 const isLoggedIn=false;
+const family=[
+  {
+    id:1,
+    name:"MUSTAFA"
+  },
+  {
+    id:2,
+    name:"IŞIL"
+  },
+  {
+    id:3,
+    name:"ZEYNEP"
+  },
+  {
+    id:4,
+    name:"MEHMET ALİ"
+  },
+
+
+]
+  
+
 function App() {
   return (
     <div className="App">
     
       <header className="App-header">
       <Header></Header>
-      <User name="Mustafa" surname="ÇAY" isLoggedIn={false}></User>
+      <User name="Mustafa" surname="ÇAY" isLoggedIn={true} age={42} friends={["AHMET","BÜLENT","SERKAN","ARİF","MURAT"]} family={family}></User>
       <p className="xyz">
         Tempor ut deserunt aliquip commodo ex labore est nostrud excepteur amet incididunt nulla labore culpa. Labore culpa ea amet eu. Veniam anim occaecat occaecat exercitation reprehenderit ad sint consectetur quis enim anim aute nostrud. Sint pariatur enim eu in dolore. Laborum voluptate ea exercitation do duis nisi aute exercitation Lorem exercitation cupidatat voluptate.
       </p>
