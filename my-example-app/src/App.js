@@ -1,7 +1,10 @@
+
+import {useState} from "react";
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import User from './components/User';
+
 const name="Mustafa";
 const surname="ÇAY";
 const isLoggedIn=false;
@@ -31,12 +34,23 @@ const family=[
 
 
 ];
-  
 
 function App() {
+/********************Use State **************************/
+
+const [ad,setAd] = useState("Mustafa"); //state tanımlama ve varsayılan değeri atama setAd değiştirecek olan metodun adı.
+const [yas,setYas]= useState(42);
+
+console.log({ad,yas});
+
   return (
     <div className="App">
-    
+      <div>
+      <h1>State Merhaba {ad}</h1>
+      <h1>State Merhaba {yas}</h1>
+      <button onClick={()=>setAd("Işıl")}>Adı Değiştir</button>
+      <button onClick={()=>setYas(36)}>Yaşı Değiştir</button>
+      </div>
       <header className="App-header">
       <Header></Header>
       <User  
