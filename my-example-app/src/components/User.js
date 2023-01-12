@@ -2,12 +2,14 @@ import PropTypes from "prop-types";
 function User(props){
     console.log(props);
 
+    if(!props.isLoggedIn){
+        return <div>Giriş Yapmadınız</div>;
+    }
     return (
-    <>
-    
+    <>    
         <h1>
             {
-                props.isLoggedIn ? `Selam User Props ${props.name} ${props.surname} ${props.age} ${props.dogumYili}`:'Giriş Yapmadınız'
+                `Selam User Props ${props.name} ${props.surname} ${props.age} ${props.dogumYili}`
             }
         </h1>
         
@@ -68,5 +70,10 @@ User.propTypes={
       })).isRequired,
 
 };
+
+User.defaultProps={
+    name:'İsimsiz',
+    isLoggedIn:false
+}
 
 export default User;

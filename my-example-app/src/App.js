@@ -40,7 +40,7 @@ function App() {
       <header className="App-header">
       <Header></Header>
       <User  
-        name="Mustafa" 
+        //name="Mustafa" 
         surname="ÇAY" 
         isLoggedIn={true}  
         age={age} 
