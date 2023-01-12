@@ -40,6 +40,9 @@ function App() {
 
 const [ad,setAd] = useState("Mustafa"); //state tanımlama ve varsayılan değeri atama setAd değiştirecek olan metodun adı.
 const [yas,setYas]= useState(42);
+/*******************Array State***************/
+const [gunler,setGunler] = useState(["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]);
+
 
 console.log({ad,yas});
 
@@ -51,6 +54,18 @@ console.log({ad,yas});
       <button onClick={()=>setAd("Işıl")}>Adı Değiştir</button>
       <button onClick={()=>setYas(36)}>Yaşı Değiştir</button>
       </div>
+<hr/>
+{/* (Array State Kullanımı Stateler de atama işlemi yaparken başlangıçta ki veri tipine uygun atama yapılmalı. */}
+<h2>Günler</h2>
+<div>
+  {
+    gunler.map((gun,index)=>(
+      <div key={index}>{gun}</div>
+    ))
+  }
+   <button onClick={()=>setGunler([...gunler,"Pazar"])}>Gün Ekle</button> {/*Önceki verileri korumak için ...gunler eklenmeli*/}
+  </div>
+<hr/>
       <header className="App-header">
       <Header></Header>
       <User  
