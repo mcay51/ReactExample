@@ -43,6 +43,9 @@ const [yas,setYas]= useState(42);
 /*******************Array State***************/
 const [gunler,setGunler] = useState(["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"]);
 
+/**************Object State **************** */
+const [iletisim,setIletisim] = useState({il:"Ankara",postaKodu:6180,telefon:5065357575});
+
 
 console.log({ad,yas});
 
@@ -64,6 +67,12 @@ console.log({ad,yas});
     ))
   }
    <button onClick={()=>setGunler([...gunler,"Pazar"])}>Gün Ekle</button> {/*Önceki verileri korumak için ...gunler eklenmeli*/}
+  </div>
+  {/* (Object State Kullanımı Stateler de atama işlemi  */}
+  <h2>İletişim</h2>
+  <div>{iletisim.il} {iletisim.postaKodu} {iletisim.telefon}
+  <br/>
+  <button onClick={()=>setIletisim({...iletisim,il:"Niğde",postaKodu:51700})}>İletişim Değiştir.</button> {/*Önceki verileri korumak için ...gunler eklenmeli*/}
   </div>
 <hr/>
       <header className="App-header">
